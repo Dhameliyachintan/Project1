@@ -1,13 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// import Array1 from './container/Array1';
+// import Employe from './container/Employe';
+// import Medicine from './container/Medicine';
+import Object1 from './container/Object1';
 
-import React from 'react'
-
-function App() {
+function App(props) {
   return (
     <div>
-       
+     {/* <Employe/>
+     <Medicine /> */}
+     {/* <Array1 /> */}
+     <Object1 />
     </div>
-  )
+  );
 }
 
+export default App;
