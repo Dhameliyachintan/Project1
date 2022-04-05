@@ -4,6 +4,7 @@ import React from 'react';
 // import Object1 from './container/Object1';
 // import Array1 from './container/Array1';
 import City from './container/City';
+import Country from './container/Country';
 
 function App(props) {
   return (
@@ -13,6 +14,7 @@ function App(props) {
      <Medicine />
      <Object1 /> */}
      <City />
+     <Country />
     </div>
   );
 }
