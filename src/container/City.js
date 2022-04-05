@@ -1,29 +1,31 @@
-import { render } from '@testing-library/react';
-import React from 'react'
+import React, { Component } from 'react';
 
-export default function City() {
+class City extends Component {
     constructor(props) {
-        super(props);
-        this.tate = {
-            id = 10,
-            stateName:'Rajasthan'
-        }
-    }
-    
-    changestateName = () => {
-        this.setState ({
-            this.stateName:'Gujarat'
-        })
-    }
-
- render () {
-     return (
-         <div>
-             {this.state.state(Name)}
-                 <button onClick={() => this.changestateName()}>changestateName</button>
-         </div>
-     )
- }
+                super(props);
+                this.state = {
+                    id: 101,
+                    cityName:'Rajasthan'
+                }
+            }
+            changestateName = () => {
+                        this.setState ({
+                          cityName:'Gujarat'
+                        })
+                    }
+  render() {
+    return (
+                 <div>
+                     {this.state.cityName}
+                         <button onClick={() => this.changestateName()}>changestateName</button>
+                 </div>
+             )
+  }
 }
+
+
+export default City;
+
+
 
 
