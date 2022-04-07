@@ -4,7 +4,9 @@ import React from 'react';
 // import Object1 from './container/Object1';
 // import Array1 from './container/Array1';
 // import City from './container/City';
-import CityFun from './container/CityFun';
+import Counter from './container/Counter';
+// import CityFun from './container/CityFun';
+// import StateFun from './container/StateFun';
 // import Country from './container/Country';
 
 function App(props) {
@@ -14,10 +16,12 @@ function App(props) {
      <Array1 />
      <Medicine />
      <Object1 /> */}
-     {/* <City />
-     <Country /> */}
+     {/* <City /> */}
+     {/* <Country /> */}
+     {/* <CityFun /> */}
+     {/* <StateFun /> */}
+     <Counter/>
 
-     <CityFun />
     </div>
   );
 }
