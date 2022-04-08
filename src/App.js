@@ -5,7 +5,7 @@ import State from './container/State';
 // import Medicine from './container/Medicine';
 // import Object1 from './container/Object1';
 // import Array1 from './container/Array1';
-// import Counter from './container/Counter';
+import Counter from './container/Counter';
 // import CityFun from './container/CityFun';
 import StateFun from './container/StateFun';
 
@@ -17,8 +17,8 @@ function App(props) {
      <Medicine />
      <Object1 /> */}
      {/* <CityFun /> */}
-     <StateFun />
-     {/* <Counter/> */}
+     {/* <StateFun /> */}
+     <Counter/>
      {/* <Country /> */}
      {/* <City/> */}
      {/* <State /> */}
