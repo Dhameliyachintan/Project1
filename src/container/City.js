@@ -1,35 +1,17 @@
-import React, { Component } from 'react';
-import Country from './Country';
+import React, { Component } from 'react'
 
-class City extends Component {
-    constructor(props) {
-                super(props);
-                this.state = {
-                    id: 101,
-                    cityName:'Rajasthan'
-                }
-                // console.log(this.props.name);
-            }
-
-            
-            changestateName = () => {
-                        this.setState ({
-                          cityName:'Gujarat'
-                        })
-                    }
+export default class City extends Component {
   render() {
     return (
-                 <div>
-                     {this.state.cityName}
-                         <button onClick={() => this.changestateName()}>changestateName</button>
-                         <Country name={this.state.cityName} id='101' />
-                 </div>
-             )
+      <div>
+        <>
+        <p>{this.props.name}</p>
+        </>
+      </div>
+    )
   }
 }
 
-
-export default City;
 
 
 

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import City from './City';
 
 
-class Country extends Component {
+class State extends Component {
     constructor(props) {
                 super(props);
                 this.state = {
-                    id: 101,
-                    cityName:'india'
+      
+                    cityName:'Surat'
                 }
                 console.log(this.props.name,this.props.id);
             }
@@ -20,11 +21,11 @@ class Country extends Component {
                  <div>
                      {this.state.cityName}
                          <button onClick={() => this.changestateName()}>changestateName</button>
-                    
+                         <City name={this.state.cityName}/>
                  </div>
              )
   }
 }
 
 
-export default Country;
+export default State;

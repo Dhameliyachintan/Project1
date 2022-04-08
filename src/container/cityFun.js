@@ -1,10 +1,15 @@
 import React from 'react';
 
 function CityFun(props) {
-    console.log(props.place);
+    console.log(props.name);
     return (
         <div>
-            
+            <>
+            {
+                props.name === 'Amit' ? 'chintan' :
+                props.name === 'Ankit' ? 'chintu' : ''
+            }
+            </>
         </div>
     );
 }

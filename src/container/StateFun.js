@@ -3,7 +3,7 @@ import CityFun from './CityFun';
 
 export default function StateFun() {
     const [id,setId] = useState(101);
-    const [name,setName] = useState('');
+    const [name,setName] = useState('Amit');
   
     const change = () => {
         setId(102);
@@ -16,10 +16,10 @@ export default function StateFun() {
     </div>
     <div>
         {name}
-        <button onClick={() => setName('Amit')}>Change name</button>
-        
+        <button onClick={() => setName('Ankit')}>Change name</button>
+        <CityFun name={name} />  
     </div>
-    <CityFun place ="ankit"/>
+   
     </> 
   )
 }
