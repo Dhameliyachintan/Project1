@@ -1,13 +1,14 @@
 import React from 'react';
-import City from './container/City';
-import State from './container/State';
+// import City from './container/City';
+// import State from './container/State';
 // import Employe from './container/Employe';
 // import Medicine from './container/Medicine';
 // import Object1 from './container/Object1';
 // import Array1 from './container/Array1';
-import Counter from './container/Counter';
+// import Counter from './container/Counter';
 // import CityFun from './container/CityFun';
-import StateFun from './container/StateFun';
+// import StateFun from './container/StateFun';
+import Clock from './container/Clock';
 
 function App(props) {
   return (
@@ -18,10 +19,11 @@ function App(props) {
      <Object1 /> */}
      {/* <CityFun /> */}
      {/* <StateFun /> */}
-     <Counter/>
+     {/* <Counter/> */}
      {/* <Country /> */}
      {/* <City/> */}
      {/* <State /> */}
+     <Clock/>
     </div>
   );
 }
