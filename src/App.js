@@ -9,6 +9,7 @@ import React from 'react';
 // import CityFun from './container/CityFun';
 // import StateFun from './container/StateFun';
 import Clock from './container/Clock';
+import Clockfun from './container/Clockfun';
 
 function App(props) {
   return (
@@ -23,7 +24,8 @@ function App(props) {
      {/* <Country /> */}
      {/* <City/> */}
      {/* <State /> */}
-     <Clock/>
+     {/* <Clock/> */}
+     <Clockfun/>
     </div>
   );
 }

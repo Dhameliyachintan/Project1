@@ -15,7 +15,7 @@ export default class Clock extends Component {
             time:new Date()
         })
     }
-   componentDidMount = () => {  //repuest data to server
+   componentDidMount = () => {  //request data to server
        console.log("3 componentDidMount");
        this.timerId = setInterval (() => this.tick(),1000)
    }
