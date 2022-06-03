@@ -16,30 +16,32 @@ import Loading from './componate/Loading/Loading';
 import Home from './container/Home/Home';
 import Form from './container/Form';
 import Login from './container/Login';
+import Logins from './container/Logins';
 const HomeWithLoading = Loading(Home)
 
-function App(props) {
-    const [loading,setLoading] = useState(false);
-    const [data,setData] = useState([]);
+// function App(props) {
+//     const [loading,setLoading] = useState(false);
+//     const [data,setData] = useState([]);
 
-    const userData = [
-      {
-        id: 101, 
-        name:'amit'
-      },
-      {
-       id:102,
-       name:'ajay'
-      }
-    ]
+//     const userData = [
+//       {
+//         id: 101, 
+//         name:'amit'
+//       },
+//       {
+//        id:102,
+//        name:'ajay'
+//       }
+//     ]
 
-    useEffect (
-      () => {
-         setLoading(true)
-         setTimeout(() => {setLoading(false); setData(userData)},2000)
-      },
-    [])
-
+//     useEffect (
+//       () => {
+//          setLoading(true)
+//          setTimeout(() => {setLoading(false); setData(userData)},2000)
+//       },
+//     [])
+ 
+function App() {
   return (
     <div>
 
@@ -49,7 +51,7 @@ function App(props) {
       /> */}
       {/* <Employe/> */}
      {/* <Array1 /> */}
-     {/* <Medicine /> */}
+     {/* <Medicine/> */}
      {/* <Object1 /> */}
       {/* <CityFun /> */}
       {/* <StateFun /> */}
@@ -59,8 +61,9 @@ function App(props) {
      {/* <State /> */}
      {/* <Clock/> */}
      {/* <Clockfun/> */}
-     <Login/>
+     {/* <Login/> */}
      {/* <Form/> */}
+     <Logins/>
     </div>
   );
 }

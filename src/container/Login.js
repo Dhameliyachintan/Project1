@@ -116,9 +116,7 @@ function Login(props) {
                                                 onChange={formik.handleChange}
                                                 value={formik.values.name}
                                                 onBlur={formik.handleBlur}
-
                                             />
-
                                             {
                                                 formik.errors.name && formik.touched.name ? <p>{formik.errors.name}</p> : ''
                                             }

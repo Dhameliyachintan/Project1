@@ -44,8 +44,8 @@ export function Medicine(props)
            status: false
          }
        ];
-
-       let filterdata = data.filter((d,i) => (d.status === true))
+ 
+       let filterdata = data.filter((d,i) => (d.status =true))
     
         let total = filterdata.reduce((acc, d) => acc + d.price,0)
         console.log(total);
