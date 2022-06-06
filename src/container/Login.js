@@ -190,7 +190,7 @@ function Login(props) {
                                             </div> :
                                             <div className='text-center mt-5'>
                                                 <span>already have an account ?</span>
-                                                <a onClick={() => { setUserType('Login') }} >    Login</a>
+                                                <a onClick={() => { setUserType('Login') }} >Login</a>
                                             </div>
                                 }
                             </div>

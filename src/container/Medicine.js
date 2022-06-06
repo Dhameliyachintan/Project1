@@ -1,7 +1,8 @@
 import React from 'react';
 
 export function Medicine(props) 
-{let data =
+{
+  let data =
       [
          {
            id: 101,
