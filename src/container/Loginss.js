@@ -2,34 +2,27 @@ import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
 
-function Login(props) {
+function Loginss(props) {
     const [userType, setUserType] = useState('Login')
-    const [reset, setReset] = useState(false)
+    const [reset, setReset] = useState([])
 
-    const handletLogin = (values) => {
-        alert(JSON.stringify(values, null, 2));
+
+    const handleLogin = (values) => {
+        // alert(JSON.stringify(values, null, 2));
+        sessionStorage.setItem("user", "1234567")
 
     }
+    const handlesignup = (values) => {
+        let localdata = JSON.parse(localStorage.getItem("Logins"))
+        console.log(localdata);
 
-    const handleSignup = (values) => {
-
-        const data = JSON.parse(localStorage.getItem("Login"));
-
-        console.log(data);
-
-        if (data === null) {
-            localStorage.setItem("users", JSON.stringify([values]));
+        if (localdata == null) {
+            localStorage.setItem("Logins", JSON.stringify([values]))
         } else {
-            data.push(values);
-            localStorage.setItem("users", JSON.stringify(data));
+            localdata.push(values);
+            localStorage.setItem("Logins", JSON.stringify(localdata));
         }
-        // data.push(values);
 
-        // localStorage.setItem("users", JSON.stringify(values));
-        alert(JSON.stringify(values, null, 2));
-    }
-    const handlepassword = (values) => {
-        alert(JSON.stringify(values.email));
     }
 
     let Login = {
@@ -42,15 +35,20 @@ function Login(props) {
         email: yup.string().required('enter email').email('enter valid email'),
         password: yup.string().required('please enter password'),
     }
-    
+
     let Password = {
         email: yup.string().required('enter email').email('enter valid email')
     }
 
 
-    let schema, initVal;
+    const handlepassword = (values) => {
+        alert(JSON.stringify(values.email));
+    }
 
-    console.log(reset);
+
+    let schema, initVal
+
+
     if (userType === "Login" && !reset) {
         schema = yup.object().shape(Login);
         initVal = {
@@ -75,23 +73,25 @@ function Login(props) {
     const formik = useFormik({
         initialValues: initVal,
         validationSchema: schema,
-        onSubmit: (values, { resetForm }) => {
+        onSubmit: values => {
+            // alert(JSON.stringify(values, null, 2));
             if (userType === "Login" && !reset) {
-                handletLogin(values)
+                handleLogin(values)
             } else if (userType === "Signup" && !reset) {
-                handleSignup(values)
+                handlesignup(values)
             } else if (reset) {
                 handlepassword(values)
             }
-            resetForm();
-        }
-    })
+
+        },
+    });
 
 
-    console.log(formik.errors);
+
+
 
     return (
-        <section id="appointment" className="appointment d-flex">
+        <section>
             <div className="container">
                 <div className='section-title'>
                     {
@@ -100,7 +100,7 @@ function Login(props) {
                             userType === 'Login' ? <h2 className='center'>Login</h2> : <h2 className='center'>Signup</h2>
                     }
                 </div>
-                <div className='php-email-form'>
+                <div className='php-email-form mt-5'>
                     <Formik value={formik}>
                         <Form onSubmit={formik.handleSubmit}>
                             <div className='row align-items-center justify-content-center'>
@@ -177,6 +177,7 @@ function Login(props) {
                                                 <button type="submit">signup</button>
                                             </div>
                                 }
+
                                 {
                                     reset === true ?
                                         <div className='text-center mt-5'>
@@ -197,18 +198,12 @@ function Login(props) {
                             </div>
                         </Form>
                     </Formik>
-                    <div>
-                    </div>
                 </div>
             </div>
-
-
         </section >
+
     );
 }
 
 
-
-
-
-export default Login;
+export default Loginss;

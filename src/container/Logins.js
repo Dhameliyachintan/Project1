@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
 
 function Logins(props) {
     const [userType, setUserType] = useState('Login')
     // const [reset, setReset] = useState(false)
+    const [data, setData] = useState(false)
 
 
     let schema = yup.object().shape({
-        name: yup.string().required('enter email').email('enter valid email'),
+        name: yup.string().required('enter name'),
         email: yup.string().required('please enter email'),
         phone: yup.string().required('please enter date'),
         date: yup.string().required('please enter date'),
@@ -28,8 +29,34 @@ function Logins(props) {
         validationSchema: schema,
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
+            handlesignup(values)
         },
     });
+
+    const handlesignup = (values) => {
+        const localdata = JSON.parse(localStorage.getItem("users"))
+        console.log(localdata);
+
+        if (localdata == null) {
+            localStorage.setItem("users", JSON.stringify([values]))
+        } else {
+            localdata.push(values);
+            localStorage.setItem("users", JSON.stringify(localdata));
+        }
+    }
+
+
+    const getData = () => {
+        let localData = JSON.parse(localStorage.getItem("users"))
+        setData(localData)
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
+
+
+
     return (
         <section id="appointment" className="appointment d-flex" >
             <div className="container">
@@ -98,17 +125,17 @@ function Logins(props) {
                             {
                                 <div className="col-md-7 form-group mt-3 mt-md-0">
                                     <input
-                                        type="data"
+                                        type="date"
                                         className="form-control"
-                                        name="data"
-                                        id="data"
-                                        placeholder="Your data"
+                                        name="date"
+                                        id="date"
+                                        placeholder="Your date"
                                         onChange={formik.handleChange}
-                                        value={formik.values.data}
+                                        value={formik.values.date}
                                         onBlur={formik.handleBlur}
                                     />
                                     {
-                                        formik.errors.data && formik.touched.data ? <p>{formik.errors.data}</p> : ''
+                                        formik.errors.phone && formik.touched.phone ? <p>{formik.errors.phone}</p> : ''
                                     }
 
                                     <div className="validate" />
@@ -116,7 +143,7 @@ function Logins(props) {
                             }
                             {
                                 <div className="col-md-7 form-group mt-3 mt-md-0">
-                                    <input
+                                    <textarea
                                         type="message"
                                         className="form-control"
                                         name="message"

@@ -11,44 +11,48 @@ import Counter from './container/Counter';
 import CityFun from './container/CityFun';
 import StateFun from './container/StateFun';
 import Clock from './container/Clock';
+import Clocktime from './container/Clocktime';
 import Clockfun from './container/Clockfun';
 import Loading from './componate/Loading/Loading';
 import Home from './container/Home/Home';
 import Form from './container/Form';
 import Login from './container/Login';
 import Logins from './container/Logins';
+import Loginss from './container/Loginss';
+// import ReactForm from './container/ReactForm';
 const HomeWithLoading = Loading(Home)
 
-// function App(props) {
-//     const [loading,setLoading] = useState(false);
-//     const [data,setData] = useState([]);
+function App(props) {
+    const [loading,setLoading] = useState(false);
+    const [data,setData] = useState([]);
 
-//     const userData = [
-//       {
-//         id: 101, 
-//         name:'amit'
-//       },
-//       {
-//        id:102,
-//        name:'ajay'
-//       }
-//     ]
+    const userData = [
+      {
+        id: 101, 
+        name:'amit'
+      },
+      {
+       id:102,
+       name:'ajay'
+      }
+    ]
 
-//     useEffect (
-//       () => {
-//          setLoading(true)
-//          setTimeout(() => {setLoading(false); setData(userData)},2000)
-//       },
-//     [])
+    useEffect (
+      () => {
+         setLoading(true)
+         setTimeout(() => {setLoading(false); setData(userData)},2000)
+
+      },
+    [])
  
-function App() {
+// function App() {
   return (
     <div>
 
-      {/* <HomeWithLoading
+      <HomeWithLoading
       isLoading = {loading}
       data={data}
-      /> */}
+      />
       {/* <Employe/> */}
      {/* <Array1 /> */}
      {/* <Medicine/> */}
@@ -57,16 +61,21 @@ function App() {
       {/* <StateFun /> */}
       {/* <Counter/> */}
       {/* <Country /> */}
-      {/* <City/> */}
-     {/* <State /> */}
-     {/* <Clock/> */}
-     {/* <Clockfun/> */}
+      {/* <City/>
+     <State />
+     <CityFun/>
+     <StateFun/> */}
+     <Clock/>
+     {/* <Clocktime/> */}
+     <Clockfun/>
      {/* <Login/> */}
+     {/* <Loginss/> */}
      {/* <Form/> */}
-     <Logins/>
+     {/* <Logins/> */}
+     {/* <Array1/> */}
     </div>
   );
-}
+};
 
 
 export default App;

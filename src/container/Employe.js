@@ -49,7 +49,7 @@ function Employe(props) {
 
     return (
         <div>
-            <table border = "1px">
+            <table border = "1px" cellPadding="5px">
         <tr>
           <th>Name</th>
           <th>age</th>
@@ -70,6 +70,7 @@ function Employe(props) {
                         <td>{d.status.toString()}</td>
                         <td>{d.salary+d.bonus}</td>
                         {i === 0 ? <td rowspan={filterdata.length}>{total}</td>:null}
+
                         </tr>
                         )
                     })

@@ -23,7 +23,7 @@ function Array1() {
       let[fname,lname] = arr6;
       console.log(arr6[0]);
       console.log(fname);
-      // console.log(lname);
+      console.log(lname);
 }
 
 export default Array1;

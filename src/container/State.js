@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import City from './City';
 
-
 class State extends Component {
   constructor(props) {
     super(props);
